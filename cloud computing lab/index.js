@@ -3,51 +3,88 @@ function getElement(element){
     if(select){ return select}
     else throw new Error(`Check ${element} selected`);
 }
-
 const pictureArray = [
     {
-    src: "./images/My-website-photo.jpeg",
-    title: "me-1",
+    src: "./images/light.jfif",
+    title: "light",
     class:"photo",
     id: 1,
-    alt:"me-1",
+    alt:"light",
     },
     {
-    src: "./images/dongwon-tuna-hot-chipotle-tuna.jpeg",
-    title: "me-2",
+    src: "./images/trees.jpg",
+    title: "tree",
     id: 2,
     class:"photo",
-    alt:"me-2",
+    alt:"tree",
     },
     {
-    src: "./images/item-1.jpeg",
-    title: "me-3",
-    id: 3,
+    src: "./images/flower.jpg",
+    title: "flower",
+    id: 2,
     class:"photo",
-    alt:"me-3",
+    alt:"flower",
     },
     {
-    src: "./images/oolong-tea.jpg",
-    title: "me-4",
-    id: 4,
+    src: "./images/home-image.jpg",
+    title: "Home",
+    id: 2,
     class:"photo",
-    alt:"me-4",
+    alt:"Home",
     },
     {
-    src: "./images/prik-khing-curry-paste.jfif",
-    title: "me-5",
+    src: "./images/dolly-p.jpg",
+    title: "dolapo",
+    id: 2,
     class:"photo",
-    alt:"me-5",
-    id: 5,
+    alt:"dolapo",
+    },
+    {
+    src: "./images/flower-1.jpg",
+    title: "flower",
+    id: 2,
+    class:"photo",
+    alt:"flower",
+    },
+    {
+    src: "./images/flower-2.jpg",
+    title: "flower",
+    id: 2,
+    class:"photo",
+    alt:"flower",
+    },
+    {
+    src: "./images/home-image1.jpg",
+    title: "Home",
+    id: 2,
+    class:"photo",
+    alt:"Home",
     },
 ];
 
 
 const section = getElement(".picture-section");
+const navbar = getElement(".nav-sideBar");
+const body = getElement(".body");
+const openBtn = getElement(".openBtn");
 
+pageResponsive();
+function pageResponsive(){
+    var navHeight = navbar.getBoundingClientRect().width;
+
+    if(screen.width > 760){
+        body.style.marginLeft = `${navHeight}px`
+    }
+
+    openBtn.addEventListener("click", function(){
+        const nav = getElement(".nav");
+        nav.classList.toggle("diplayNav");
+    });
+}
 
 allPictures(pictureArray);
 function allPictures(pictureArray){
+
     var displayAll = pictureArray.map(function(e){
     return `
         <img
