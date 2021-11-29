@@ -96,9 +96,6 @@
   }
 }
 @media screen and (min-width: 761px){
-  .body{
-    margin-left: 279px;
-  }
   .openBtn{
     display: none;
   }
@@ -165,7 +162,7 @@
   width: 100%;
   height: 100vh;
   background: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-    url(./images/home-image1.jpg);
+    url(./home-image1.jpg);
   /* height: 100%; */
   background-position: center;
   background-repeat: no-repeat;
